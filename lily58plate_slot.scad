@@ -3,7 +3,7 @@ use <BOSL/shapes.scad>
 
 upper_plate = 1.5;
 height = 5;
-hole = 14.1;
+hole = 14;
 hang = 2;
 
 module slot_negative() {
