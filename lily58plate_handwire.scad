@@ -10,18 +10,25 @@ module bolt() {
     translate([0, 0, 0]) cylinder(4, d=4);
 }
 
-module plate() {
-    // translate([0, -2, 0]) linear_extrude(6) import("lily58_TOP-B_Cu.svg");
+module trrsJackMount() {
     difference() {
         union() {
-            translate([0, -2, 0]) bevel_extrude(5, bevel_depth=1) offset(0.8) import("lily58_TOP-Frame.svg");
-            translate([105, y_cmp-114.8, 0]) bolt_notch();
-            translate([129.6, y_cmp-59.6, 0]) bolt_notch();
-            translate([129.6, y_cmp-97.6, 0]) bolt_notch();
-            translate([205.8, y_cmp-61.8, 0]) bolt_notch();
-            translate([205.8, y_cmp-100, 0]) bolt_notch();
+            cube(size = [3, 10, 10]);
+            translate([0, 5, 10]) rotate([0, 90, 0]) cylinder(h = 3, r = 5);
         }
+        translate([0, 5, 10]) rotate([0, 90, 0]) cylinder(h = 3, r = 3);
+    }
+}
+
+module plate() {
+    difference() {
         y_cmp = 210;
+        union() {
+            translate([90, y_cmp-38.2-10-38, 0]) trrsJackMount();
+            translate([0, -2, 0]) bevel_extrude(5, bevel_depth=1) offset(0.8) import("lily58_BOTTOM-Frame.svg");
+        }
+        // Cutouts for microcontroller pins
+        // translate([82, y_cmp-78, 0]) cube(size = [4,35, 5]);
         
         // Keys
         translate([101.4, y_cmp-97.5, 0]) slot_negative();
