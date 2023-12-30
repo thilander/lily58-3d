@@ -17,19 +17,11 @@ module threadedInserts() {
     translate([0, 0, -2]) cylinder(h=4, d=4);
 }
 
-module controllerPlatform() {
-
-}
-
 module boltPillar() {
     difference() {
         translate([0, 0, 0]) cylinder(h=5, d=6);
         translate([0, 0, -2]) cylinder(h=20, d=3);
     }
-}
-
-module electronicsMount() {
-
 }
 
 module base() {
@@ -46,12 +38,10 @@ module base() {
             // Base plate
             difference() {
                 translate([0, 0, -8]) bevel_extrude(8, bevel_depth=1, bottom=true) offset(0.8) import("lily58_BOTTOM-Frame.svg");
-                translate([0, -2, -5]) linear_extrude(6) offset(-2.2) import("lily58_TOP-Frame.svg");
-                // translate([0, 0, -5]) linear_extrude(6) offset(-2.2) import("lily58_BOTTOM-Frame.svg");
-                translate([0, 0, 0]) linear_extrude(6) offset(-0.8) import("lily58_TOP-Frame.svg");
+                // translate([0, -2, -5]) linear_extrude(6) offset(-2.2) import("lily58_TOP-Frame.svg");
+                translate([0, 0, -5]) linear_extrude(6) offset(-2.2) import("lily58_BOTTOM-Frame.svg");
+                // translate([0, 0, 0]) linear_extrude(6) offset(-0.8) import("lily58_TOP-Frame.svg");
             }
-
-            electronicsMount();
         }
         // Controller
         // translate([54+28, y_cmp-61-36, -5]) cube([28, 61, 5]);
