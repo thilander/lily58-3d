@@ -13,10 +13,10 @@ module bolt() {
 module trrsJackMount() {
     difference() {
         union() {
-            cube(size = [2.5, 10, 10]);
-            translate([0, 5, 10]) rotate([0, 90, 0]) cylinder(h = 2.5, r = 5);
+            cube(size = [10, 2.5, 10]);
+            translate([5, 0, 10]) rotate([0, 90, 90]) cylinder(h = 2.5, r = 5);
         }
-        translate([0, 5, 10]) rotate([0, 90, 0]) cylinder(h = 3, r = 3);
+        translate([5, 0, 10]) rotate([0, 90, 90]) cylinder(h = 3, r = 3);
     }
 }
 
@@ -24,7 +24,7 @@ module plate() {
     difference() {
         y_cmp = 210;
         union() {
-            translate([90, y_cmp-38.2-10-38, 0]) trrsJackMount();
+            translate([83, y_cmp-38.2-10, 0]) trrsJackMount();
             translate([0, -2, 0]) bevel_extrude(5, bevel_depth=1) offset(0.8) import("lily58_BOTTOM-Frame.svg");
         }
         // Cutouts for microcontroller pins
