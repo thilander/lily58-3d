@@ -13,8 +13,8 @@ module bolt() {
 module trrsJackMount() {
     difference() {
         union() {
-            cube(size = [3, 10, 10]);
-            translate([0, 5, 10]) rotate([0, 90, 0]) cylinder(h = 3, r = 5);
+            cube(size = [2.5, 10, 10]);
+            translate([0, 5, 10]) rotate([0, 90, 0]) cylinder(h = 2.5, r = 5);
         }
         translate([0, 5, 10]) rotate([0, 90, 0]) cylinder(h = 3, r = 3);
     }
