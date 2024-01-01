@@ -24,12 +24,16 @@ module plate() {
     difference() {
         y_cmp = 210;
         union() {
-            translate([83, y_cmp-38.2-10, 0]) trrsJackMount();
-            translate([0, -2, 0]) bevel_extrude(5, bevel_depth=1) offset(0.8) import("lily58_BOTTOM-Frame.svg");
+            translate([82.1, y_cmp-38.2-4, 0]) trrsJackMount();
+            translate([0, 0, 0]) bevel_extrude(5, bevel_depth=1) offset(0.8) import("lily58_BOTTOM-Frame.svg");
         }
         // Cutouts for microcontroller pins
-        // translate([82, y_cmp-78, 0]) cube(size = [4,35, 5]);
-        
+        translate([78+30, y_cmp-72, 0]) cube(size = [2.5, 31, 5]);
+        translate([78+30-15, y_cmp-72, 0]) cube(size = [2.5, 31, 5]);
+
+        // Cover mount holes
+        translate([108, y_cmp-85, 1]) cylinder(4, d=4);
+        translate([88, y_cmp-85, 1]) cylinder(4, d=4);
         // Keys
         translate([101.4, y_cmp-97.5, 0]) slot_negative();
         translate([105, y_cmp-127, 0]) rotate([0, 0, -60]) slot_negative();
