@@ -13,11 +13,11 @@ module bolt() {
 module trrsJackMount() {
     difference() {
         union() {
-            cube(size = [10, 8, 10]);
-            translate([5, 0, 10]) rotate([0, 90, 90]) cylinder(h = 8, r = 5);
+            cube(size = [9, 8, 10]);
+            translate([4.5, 0, 10]) rotate([0, 90, 90]) cylinder(h = 8, r = 4.5);
         }
-        translate([5, 5.5, 10]) rotate([0, 90, 90]) cylinder(h = 2.5, r = 3);
-        translate([5, 0, 10]) rotate([0, 90, 90]) cylinder(h = 5.5, r = 4);
+        translate([4.5, 5.5, 10]) rotate([0, 90, 90]) cylinder(h = 2.5, r = 3);
+        translate([4.5, 0, 10]) rotate([0, 90, 90]) cylinder(h = 5.5, r = 4);
     }
 }
 
@@ -29,12 +29,12 @@ module plate() {
             translate([0, 0, 0]) bevel_extrude(5, bevel_depth=1) offset(0.8) import("lily58_BOTTOM-Frame.svg");
         }
         // Cutouts for microcontroller pins
-        translate([78+30, y_cmp-72, 0]) cube(size = [2.5, 31, 5]);
-        translate([78+30-15, y_cmp-72, 0]) cube(size = [2.5, 31, 5]);
+        translate([78+30, y_cmp-72, 0]) cube(size = [2.6, 31, 5]);
+        translate([78+30-15, y_cmp-72, 0]) cube(size = [2.6, 31, 5]);
 
         // Cover mount holes
-        translate([108, y_cmp-85, 1]) cylinder(4, d=4);
-        translate([88, y_cmp-85, 1]) cylinder(4, d=4);
+        translate([108, y_cmp-79, 0]) cylinder(5, d=4);
+        translate([88, y_cmp-79, 0]) cylinder(5, d=4);
         // Keys
         // translate([101.4, y_cmp-97.5, 0]) slot_negative();
         // translate([105, y_cmp-127, 0]) rotate([0, 0, -60]) slot_negative();
