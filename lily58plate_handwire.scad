@@ -6,7 +6,7 @@ use <lily58plate_slot.scad>
 use <module-bevelextrude.scad>
 
 
-module bolt() {
+module boltHole() {
     translate([0, 0, 0]) cylinder(4, d=4);
 }
 
@@ -19,10 +19,6 @@ module trrsJackMount() {
         translate([5, 5.5, 10]) rotate([0, 90, 90]) cylinder(h = 2.5, r = 3);
         translate([5, 0, 10]) rotate([0, 90, 90]) cylinder(h = 5.5, r = 4);
     }
-}
-
-module controllerPinCutouts() {
-    
 }
 
 module plate() {
@@ -75,11 +71,11 @@ module plate() {
         translate([149, y_cmp-123.75, 0]) slot_negative();
         translate([168.1, y_cmp-123.75, 0]) slot_negative();
         // Bolt holes
-        translate([105, y_cmp-114.8, 0]) bolt();
-        translate([129.6, y_cmp-59.6, 0]) bolt();
-        translate([129.6, y_cmp-97.6, 0]) bolt();
-        translate([205.8, y_cmp-61.8, 0]) bolt();
-        translate([205.8, y_cmp-100, 0]) bolt();
+        translate([105, y_cmp-114.8, 0]) boltHole();
+        translate([129.6, y_cmp-59.6, 0]) boltHole();
+        translate([129.6, y_cmp-97.6, 0]) boltHole();
+        translate([205.8, y_cmp-61.8, 0]) boltHole();
+        translate([205.8, y_cmp-100, 0]) boltHole();
     }
 }
 
